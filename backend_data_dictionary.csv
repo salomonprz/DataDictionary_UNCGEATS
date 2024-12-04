@@ -1,0 +1,47 @@
+Field Name,Table,Data Type,Description
+user_id,user,INTEGER,Unique identifier for each user.
+username,user,VARCHAR(50),Username chosen by the user. Must be unique.
+email,user,VARCHAR(255),Email address of the user. Must be unique.
+password,user,TEXT,Hashed password for user authentication.
+role,user,VARCHAR(50),"Role of the user (e.g., 'admin', 'user')."
+banned,user,BOOLEAN,Indicates whether the user is banned.
+is_deleted,user,BOOLEAN,Indicates if the user account is soft-deleted.
+profile_pic,user,TEXT,Filename for the user's profile picture.
+has_selected_tags,user,BOOLEAN,Indicates if the user has selected tags.
+poll_id,polls,SERIAL,Unique identifier for each poll.
+question,polls,TEXT,Poll question text.
+admin_id,polls,INTEGER,Reference to the 'user_id' of the poll's creator.
+option_id,poll_options,SERIAL,Unique identifier for each poll option.
+option_text,poll_options,TEXT,Text of the poll option.
+vote_count,poll_options,INTEGER,Number of votes for the option.
+vote_id,poll_votes,SERIAL,Unique identifier for each vote.
+voted_at,poll_votes,TIMESTAMP,Timestamp for when the vote was cast.
+restaurant_id,restaurant,SERIAL,Unique identifier for each restaurant.
+name,restaurant,TEXT,Name of the restaurant.
+address,restaurant,TEXT,Physical address of the restaurant.
+phone_num,restaurant,VARCHAR(15),Contact phone number of the restaurant.
+cuisine_type,restaurant,TEXT,Type(s) of cuisine offered by the restaurant.
+description,restaurant,TEXT,Description of the restaurant.
+restaurant_pic,restaurant,TEXT,Filename(s) of images associated with the restaurant.
+menu_items,restaurant,TEXT,Menu details or filenames for menu images.
+rating,restaurant,NUMERIC,Overall rating of the restaurant.
+tag_id,tag,SERIAL,Unique identifier for each tag.
+tag_name,tag,TEXT,"Name of the tag (e.g., 'Italian', 'Vegan')."
+event_id,event,SERIAL,Unique identifier for each event.
+event_name,event,TEXT,Name of the event.
+event_description,event,TEXT,Description of the event.
+event_date,event,DATE,Date when the event takes place.
+location,event,TEXT,Location of the event.
+event_pic,event,TEXT,Filename for the event image.
+circle_id,social_circle,SERIAL,Unique identifier for each social circle.
+circle_name,social_circle,TEXT,Name of the social circle.
+owner_id,social_circle,INTEGER,Reference to the 'user_id' of the circle's owner.
+image,social_circle,TEXT,Filename for the social circle image.
+message_id,circle_message,SERIAL,Unique identifier for each circle message.
+content,circle_message,TEXT,Content of the message.
+created_at,circle_message,TIMESTAMP,Timestamp for when the message was sent.
+review_id,review,SERIAL,Unique identifier for each review.
+review_text,review,TEXT,Content of the review.
+rating,review,NUMERIC,Rating provided in the review.
+date_posted,review,TIMESTAMP,Timestamp for when the review was posted.
+review_pictures,review,TEXT,Filename(s) of images attached to the review.
